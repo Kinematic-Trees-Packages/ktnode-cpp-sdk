@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "3",
+  "metadata": {
+    "name": "ktrobotics-cpp-sdk",
+    "namespace": "kinematic-trees",
+    "version": "0.1.1",
+    "description": "C++ high-level SDK for KT Robotics lib_ktrobotics.so.1 with runtime and vision_sample helpers.",
+    "author": "Kinematic Trees Package Team",
+    "language": "binary",
+    "license": "MIT",
+    "packageType": "local",
+    "homepage": "https://github.com/Kinematic-Trees-Packages/librobotics-language-video-nodes",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Kinematic-Trees-Packages/librobotics-language-video-nodes.git"
+    },
+    "keywords": [
+      "kinematic-trees",
+      "robotics",
+      "cpp",
+      "c++",
+      "sdk",
+      "librobotics"
+    ],
+    "maintainers": [
+      {
+        "name": "Kinematic Trees Package Team",
+        "email": "team@kinematictrees.com"
+      }
+    ]
+  },
+  "files": [
+    "README.md",
+    "ktrobotics",
+    "tests",
+    "package.ktm.json",
+    "scripts"
+  ],
+  "distribution": {
+    "packages": []
+  },
+  "runEnvironments": [
+    {
+      "name": "linux-x64",
+      "type": "native",
+      "os": "linux",
+      "arch": "x64",
+      "description": "C++ header-only SDK source package for public KT Robotics C ABI.",
+      "hostRequirements": {
+        "libc": {
+          "implementation": "glibc",
+          "minimumVersion": "2.39"
+        }
+      },
+      "recipes": [
+        {
+          "action": "build",
+          "command": {
+            "program": "scripts/package.sh",
+            "args": []
+          },
+          "timeoutSeconds": 600
+        }
+      ]
+    }
+  ],
+  "runtime": {
+    "sdk": "c-abi-v1"
+  },
+  "dependencies": {
+    "system": [],
+    "packages": [
+      {
+        "owner": "kinematic-trees",
+        "name": "kt-robotics",
+        "version": "0.1.3",
+        "classification": "runtime",
+        "environments": {
+          "linux-x64": "linux-x64"
+        }
+      }
+    ],
+    "optional": []
+  },
+  "resources": {
+    "gpu": false,
+    "ports": [],
+    "x11": false
+  },
+  "dataflow": {
+    "inputs": [],
+    "outputs": []
+  },
+  "config": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}
