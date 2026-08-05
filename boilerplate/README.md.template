@@ -2,17 +2,58 @@
 
 Editable Kinematic Trees `cpp` project created from a KTM-installed kt-node boilerplate package.
 
-This project is intentionally copied out of KTM's immutable package store. Edit this directory, not the installed boilerplate package.
+KTM copied this project out of the immutable package store so you can edit it normally. Work in this directory, not in the installed boilerplate package.
+
+## Start here
+
+```bash
+ktm dev
+```
+
+`ktm dev` is the guided path for new developers. It prepares KTM dependencies, composes native headers/libraries, builds the project, runs the smoke test, and prints the next step.
+
+## Everyday commands
+
+```bash
+ktm build
+ktm test
+ktm doctor
+ktm explain linking
+ktm pack --platform {{KTM_CREATE_PRIMARY_PLATFORM}}
+```
+
+Recommended first edit:
+
+```text
+src/robot.cpp
+```
 
 ## Dependency model
 
 The generated `package.ktm.json` declares a dependency on `kinematic-trees/kt-node@{{KTM_CREATE_KT_NODE_VERSION}}`.
-Build and test scripts expect KTM to provide dependency exports such as `CPATH`, `LIBRARY_PATH`, `LD_LIBRARY_PATH`, `PKG_CONFIG_PATH`, `CMAKE_PREFIX_PATH`, and `PATH`.
 
-## Next commands
+You normally do **not** need to export `CPATH`, `LIBRARY_PATH`, `LD_LIBRARY_PATH`, `PKG_CONFIG_PATH`, or `CMAKE_PREFIX_PATH` yourself. KTM supplies those when you use `ktm dev`, `ktm build`, and `ktm test`.
+
+If you are integrating a manual tool, inspect or export the KTM environment explicitly:
 
 ```bash
+ktm env
+eval "$(ktm env --shell)"
+```
+
+## Advanced manual usage
+
+Use native tooling directly only when you are debugging the language toolchain itself. Start from the KTM environment first:
+
+```bash
+eval "$(ktm env --shell)"
+cmake -S . -B build && cmake --build build
 scripts/test.sh
-ktm validate package.ktm.json
-ktm pack --platform {{KTM_CREATE_PRIMARY_PLATFORM}}
+```
+
+If native linking fails manually, compare with:
+
+```bash
+ktm explain linking
+ktm test
 ```

@@ -15,6 +15,7 @@
   "distribution": {"packages": []},
   "runEnvironments": {{KTM_CREATE_RUN_ENVIRONMENTS_JSON}},
   "runtime": {"sdk": "{{KTM_CREATE_RUNTIME_SDK}}"},
+  "development": {"commands": {"build": ["scripts/build.sh"], "test": ["scripts/test.sh"], "smoke": ["scripts/test.sh"]}},
   "dependencies": {
     "system": [],
     "packages": [
