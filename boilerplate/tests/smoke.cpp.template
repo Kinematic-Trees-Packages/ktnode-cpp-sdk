@@ -1,0 +1,8 @@
+#include "{{KTM_CREATE_MODULE_NAME}}/robot.hpp"
+
+#include <string>
+
+int main() {
+  auto status = {{KTM_CREATE_MODULE_NAME}}::Robot().status();
+  return status.find("kt-node ABI") == std::string::npos ? 1 : 0;
+}

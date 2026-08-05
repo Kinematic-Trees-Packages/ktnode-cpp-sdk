@@ -1,0 +1,12 @@
+#pragma once
+
+#include <string>
+
+namespace {{KTM_CREATE_MODULE_NAME}} {
+
+class Robot {
+public:
+  std::string status() const;
+};
+
+}  // namespace {{KTM_CREATE_MODULE_NAME}}

@@ -1,0 +1,24 @@
+cmake_minimum_required(VERSION 3.16)
+project({{KTM_CREATE_MODULE_NAME}} LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+add_library({{KTM_CREATE_MODULE_NAME}} src/robot.cpp)
+target_include_directories({{KTM_CREATE_MODULE_NAME}} PUBLIC include)
+
+find_package(KTRobotics CONFIG QUIET)
+if(KTRobotics_FOUND)
+  target_link_libraries({{KTM_CREATE_MODULE_NAME}} PUBLIC KTRobotics::ktrobotics)
+else()
+  find_library(KT_NODE_LIBRARY NAMES kt_node REQUIRED)
+  find_path(KT_NODE_INCLUDE_DIR NAMES kt_robotics.h REQUIRED)
+  target_include_directories({{KTM_CREATE_MODULE_NAME}} PUBLIC "${KT_NODE_INCLUDE_DIR}")
+  target_link_libraries({{KTM_CREATE_MODULE_NAME}} PUBLIC "${KT_NODE_LIBRARY}")
+endif()
+
+add_executable(basic examples/basic.cpp)
+target_link_libraries(basic PRIVATE {{KTM_CREATE_MODULE_NAME}})
+
+add_executable(smoke tests/smoke.cpp)
+target_link_libraries(smoke PRIVATE {{KTM_CREATE_MODULE_NAME}})

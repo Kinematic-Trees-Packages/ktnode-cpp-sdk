@@ -1,0 +1,8 @@
+#include "{{KTM_CREATE_MODULE_NAME}}/robot.hpp"
+
+#include <iostream>
+
+int main() {
+  std::cout << {{KTM_CREATE_MODULE_NAME}}::Robot().status() << '\n';
+  return 0;
+}

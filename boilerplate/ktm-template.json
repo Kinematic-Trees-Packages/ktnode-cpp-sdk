@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "ktm.create-template.v1",
+  "language": "cpp",
+  "sdk": "kt-node",
+  "displayName": "Kinematic Trees C++ SDK boilerplate",
+  "templateRoot": "boilerplate",
+  "generatedManifest": "package.ktm.json.template",
+  "placeholders": [
+    "PROJECT_NAME",
+    "PACKAGE_NAME",
+    "NAMESPACE",
+    "DESCRIPTION",
+    "AUTHOR",
+    "LANGUAGE",
+    "RUNTIME_SDK",
+    "PRIMARY_PLATFORM",
+    "PLATFORMS_JSON",
+    "RUN_ENVIRONMENTS_JSON",
+    "KT_NODE_VERSION",
+    "MODULE_NAME"
+  ],
+  "copy": {
+    "include": [
+      "**/*"
+    ],
+    "exclude": [
+      "ktm-template.json"
+    ]
+  },
+  "finalize": {
+    "templateSuffix": ".template",
+    "deleteTemplateSuffix": true
+  },
+  "smoke": {
+    "commands": [
+      "scripts/test.sh"
+    ],
+    "timeoutSeconds": 600
+  }
+}

@@ -1,0 +1,15 @@
+#include "{{KTM_CREATE_MODULE_NAME}}/robot.hpp"
+
+#include <kt_robotics.h>
+
+#include <sstream>
+
+namespace {{KTM_CREATE_MODULE_NAME}} {
+
+std::string Robot::status() const {
+  std::ostringstream out;
+  out << "kt-node ABI " << kt_abi_version_major() << "." << kt_abi_version_minor() << " loaded";
+  return out.str();
+}
+
+}  // namespace {{KTM_CREATE_MODULE_NAME}}

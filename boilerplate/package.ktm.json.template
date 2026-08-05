@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "3",
+  "metadata": {
+    "name": "{{KTM_CREATE_PACKAGE_NAME}}",
+    "namespace": "{{KTM_CREATE_NAMESPACE}}",
+    "version": "0.1.0",
+    "description": "{{KTM_CREATE_DESCRIPTION}}",
+    "author": "{{KTM_CREATE_AUTHOR}}",
+    "language": "binary",
+    "license": "MIT",
+    "packageType": "local",
+    "keywords": ["kinematic-trees", "robotics", "kt-node", "{{KTM_CREATE_LANGUAGE}}"]
+  },
+  "files": ["README.md", "scripts", "examples", "package.ktm.json", "include", "src", "tests", "CMakeLists.txt"],
+  "distribution": {"packages": []},
+  "runEnvironments": {{KTM_CREATE_RUN_ENVIRONMENTS_JSON}},
+  "runtime": {"sdk": "{{KTM_CREATE_RUNTIME_SDK}}"},
+  "dependencies": {
+    "system": [],
+    "packages": [
+      {
+        "owner": "kinematic-trees",
+        "name": "kt-node",
+        "version": "{{KTM_CREATE_KT_NODE_VERSION}}",
+        "classification": "library",
+        "environments": {"linux_18": "linux_18", "linux_20": "linux_20"}
+      }
+    ],
+    "optional": []
+  },
+  "resources": {"gpu": false, "ports": [], "x11": false},
+  "dataflow": {"inputs": [], "outputs": []},
+  "config": {"type": "object", "properties": {}, "required": []}
+}

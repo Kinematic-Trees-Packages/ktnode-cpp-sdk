@@ -1,99 +1,124 @@
 {
-  "schemaVersion": "3",
+  "config": {
+    "properties": {},
+    "required": [],
+    "type": "object"
+  },
+  "dataflow": {
+    "inputs": [],
+    "outputs": []
+  },
+  "dependencies": {
+    "optional": [],
+    "packages": [
+      {
+        "classification": "library",
+        "environments": {
+          "linux_18": "linux_18",
+          "linux_20": "linux_20"
+        },
+        "name": "kt-node",
+        "owner": "kinematic-trees",
+        "version": "0.1.1+build.18267"
+      }
+    ],
+    "system": []
+  },
+  "distribution": {
+    "packages": [],
+    "urlStrategy": "local-relative"
+  },
+  "files": [
+    "boilerplate",
+    "scripts/package.sh",
+    "package.ktm.json",
+    "include",
+    "tests"
+  ],
   "metadata": {
-    "name": "ktrobotics-cpp-sdk",
-    "namespace": "kinematic-trees",
-    "version": "0.1.1",
-    "description": "C++ high-level SDK for KT Robotics kt-node/libkt_node with runtime and vision_sample helpers.",
     "author": "Kinematic Trees Package Team",
+    "description": "Kinematic Trees C++ SDK boilerplate for projects that build against KTM-installed kt-node.",
+    "homepage": "https://github.com/Kinematic-Trees-Packages/ktnode-cpp-sdk",
+    "keywords": [
+      "kinematic-trees",
+      "robotics",
+      "sdk",
+      "boilerplate",
+      "kt-node",
+      "cpp"
+    ],
     "language": "binary",
     "license": "MIT",
+    "maintainers": [
+      {
+        "email": "team@kinematictrees.com",
+        "name": "Kinematic Trees Package Team"
+      }
+    ],
+    "name": "ktrobotics-cpp-sdk",
+    "namespace": "kinematic-trees",
     "packageType": "local",
-    "homepage": "https://github.com/Kinematic-Trees-Packages/ktnode-cpp-sdk",
     "repository": {
       "type": "git",
       "url": "https://github.com/Kinematic-Trees-Packages/ktnode-cpp-sdk.git"
     },
-    "keywords": [
-      "kinematic-trees",
-      "robotics",
-      "cpp",
-      "c++",
-      "sdk",
-      "librobotics"
-    ],
-    "maintainers": [
-      {
-        "name": "Kinematic Trees Package Team",
-        "email": "team@kinematictrees.com"
-      }
-    ]
-  },
-  "files": [
-    "README.md",
-    "ktrobotics",
-    "tests",
-    "package.ktm.json",
-    "scripts"
-  ],
-  "distribution": {
-    "packages": []
-  },
-  "runEnvironments": [
-    {
-      "name": "linux-x64",
-      "type": "native",
-      "os": "linux",
-      "arch": "x64",
-      "description": "C++ header-only SDK source package for public KT Robotics C ABI.",
-      "hostRequirements": {
-        "libc": {
-          "implementation": "glibc",
-          "minimumVersion": "2.39"
-        }
-      },
-      "recipes": [
-        {
-          "action": "build",
-          "command": {
-            "program": "scripts/package.sh",
-            "args": []
-          },
-          "timeoutSeconds": 600
-        }
-      ]
-    }
-  ],
-  "runtime": {
-    "sdk": "c-abi-v1"
-  },
-  "dependencies": {
-    "system": [],
-    "packages": [
-      {
-        "owner": "kinematic-trees",
-        "name": "kt-node",
-        "version": "0.1.1+build.18267",
-        "classification": "runtime",
-        "environments": {
-          "linux-x64": "linux-x64"
-        }
-      }
-    ],
-    "optional": []
+    "version": "0.1.1"
   },
   "resources": {
     "gpu": false,
     "ports": [],
     "x11": false
   },
-  "dataflow": {
-    "inputs": [],
-    "outputs": []
+  "runEnvironments": [
+    {
+      "arch": "x64",
+      "description": "Kinematic Trees C++ SDK boilerplate source package for Linux 18.",
+      "hostRequirements": {
+        "libc": {
+          "implementation": "glibc",
+          "minimumVersion": "2.27"
+        }
+      },
+      "name": "linux_18",
+      "os": "linux",
+      "recipes": [
+        {
+          "action": "build",
+          "command": {
+            "args": [],
+            "program": "scripts/package.sh"
+          },
+          "timeoutSeconds": 600
+        }
+      ],
+      "type": "native"
+    },
+    {
+      "arch": "x64",
+      "description": "Kinematic Trees C++ SDK boilerplate source package for Linux 20.",
+      "hostRequirements": {
+        "libc": {
+          "implementation": "glibc",
+          "minimumVersion": "2.29"
+        }
+      },
+      "name": "linux_20",
+      "os": "linux",
+      "recipes": [
+        {
+          "action": "build",
+          "command": {
+            "args": [],
+            "program": "scripts/package.sh"
+          },
+          "timeoutSeconds": 600
+        }
+      ],
+      "type": "native"
+    }
+  ],
+  "runtime": {
+    "sdk": "cpp"
   },
-  "config": {
-    "type": "object",
-    "properties": {},
-    "required": []
-  }
+  "schemaVersion": "3"
 }
