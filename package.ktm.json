@@ -4,15 +4,15 @@
     "name": "ktrobotics-cpp-sdk",
     "namespace": "kinematic-trees",
     "version": "0.1.1",
-    "description": "C++ high-level SDK for KT Robotics lib_ktrobotics.so.1 with runtime and vision_sample helpers.",
+    "description": "C++ high-level SDK for KT Robotics kt-node/libkt_node with runtime and vision_sample helpers.",
     "author": "Kinematic Trees Package Team",
     "language": "binary",
     "license": "MIT",
     "packageType": "local",
-    "homepage": "https://github.com/Kinematic-Trees-Packages/librobotics-language-video-nodes",
+    "homepage": "https://github.com/Kinematic-Trees-Packages/ktnode-cpp-sdk",
     "repository": {
       "type": "git",
-      "url": "https://github.com/Kinematic-Trees-Packages/librobotics-language-video-nodes.git"
+      "url": "https://github.com/Kinematic-Trees-Packages/ktnode-cpp-sdk.git"
     },
     "keywords": [
       "kinematic-trees",
@@ -72,8 +72,8 @@
     "packages": [
       {
         "owner": "kinematic-trees",
-        "name": "kt-robotics",
-        "version": "0.1.3",
+        "name": "kt-node",
+        "version": "0.1.1+build.18267",
         "classification": "runtime",
         "environments": {
           "linux-x64": "linux-x64"
