@@ -19,7 +19,7 @@
         },
         "name": "kt-node",
         "owner": "kinematic-trees",
-        "version": "0.1.1+build.18267"
+        "version": "~0.1.1"
       }
     ],
     "system": []
