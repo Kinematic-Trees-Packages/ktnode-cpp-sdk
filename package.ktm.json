@@ -38,7 +38,7 @@
   "metadata": {
     "author": "Kinematic Trees Package Team",
     "description": "Kinematic Trees C++ SDK boilerplate for projects that build against KTM-installed kt-node.",
-    "homepage": "https://github.com/Kinematic-Trees-Packages/ktnode-cpp-sdk",
+    "homepage": "https://github.com/Kinematic-Trees-Packages/kt-node-cpp-sdk",
     "keywords": [
       "kinematic-trees",
       "robotics",
@@ -55,12 +55,12 @@
         "name": "Kinematic Trees Package Team"
       }
     ],
-    "name": "ktrobotics-cpp-sdk",
+    "name": "kt-node-cpp-sdk",
     "namespace": "kinematic-trees",
     "packageType": "local",
     "repository": {
       "type": "git",
-      "url": "https://github.com/Kinematic-Trees-Packages/ktnode-cpp-sdk.git"
+      "url": "https://github.com/Kinematic-Trees-Packages/kt-node-cpp-sdk.git"
     },
     "version": "0.1.1"
   },
