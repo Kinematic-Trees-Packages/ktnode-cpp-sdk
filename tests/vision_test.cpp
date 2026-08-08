@@ -3,11 +3,11 @@
 #include <iostream>
 #include <vector>
 
-#include <ktrobotics/vision.hpp>
+#include <ktnode/vision.hpp>
 #include <bow/data/vision_sample_generated.h>
 
 int main() {
-  ktrobotics::vision::ImageFrame frame;
+  ktnode::vision::ImageFrame frame;
   frame.source = "unit-test";
   frame.width = 2;
   frame.height = 1;
@@ -16,7 +16,7 @@ int main() {
   frame.captured_unix_ns = 42;
   frame.data = {1, 2, 3, 4, 5, 6};
 
-  auto payload = ktrobotics::vision::encode_image_sample(frame);
+  auto payload = ktnode::vision::encode_image_sample(frame);
   assert(payload.size() > frame.data.size());
   auto* sample = bow::data::GetImageSample(payload.data());
   assert(sample->source()->str() == "unit-test");

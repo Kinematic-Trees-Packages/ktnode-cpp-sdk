@@ -21,8 +21,8 @@ find_in_path_list() {
 
 require_kt_node_build_env() {
   local missing=0
-  if ! find_in_path_list CPATH kt_robotics.h; then
-    echo "kt-node header kt_robotics.h not found in CPATH; run through KTM so kt-node includePaths are composed" >&2
+  if ! find_in_path_list CPATH kt_node.h; then
+    echo "kt-node header kt_node.h not found in CPATH; run through KTM so kt-node includePaths are composed" >&2
     missing=1
   fi
   if ! find_in_path_list LIBRARY_PATH libkt_node.so && ! find_in_path_list LIBRARY_PATH libkt_node.a && ! find_in_path_list LD_LIBRARY_PATH libkt_node.so; then

@@ -6,9 +6,9 @@
 #include <string_view>
 #include <vector>
 
-#include <kt_robotics.h>
+#include <kt_node.h>
 
-namespace ktrobotics {
+namespace ktnode {
 
 class Error : public std::runtime_error {
  public:
@@ -224,4 +224,4 @@ inline void run(const std::string& package_path, const std::string& runtime_path
   runtime.run();
 }
 
-}  // namespace ktrobotics
+}  // namespace ktnode

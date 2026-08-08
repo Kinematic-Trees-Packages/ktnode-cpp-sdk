@@ -1,6 +1,6 @@
 #include "{{KTM_CREATE_MODULE_NAME}}/robot.hpp"
 
-#include <kt_robotics.h>
+#include <kt_node.h>
 
 #include <sstream>
 

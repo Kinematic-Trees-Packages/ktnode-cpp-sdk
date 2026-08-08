@@ -9,7 +9,7 @@
 #include <flatbuffers/flatbuffers.h>
 #include <bow/data/vision_sample_generated.h>
 
-namespace ktrobotics::vision {
+namespace ktnode::vision {
 
 struct ImageFrame {
   std::string source;
@@ -62,4 +62,4 @@ inline std::vector<uint8_t> encode_image_sample(const ImageFrame& frame) {
   return std::vector<uint8_t>(begin, begin + builder.GetSize());
 }
 
-}  // namespace ktrobotics::vision
+}  // namespace ktnode::vision
